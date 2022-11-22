@@ -1,0 +1,12 @@
+export default {
+  BUILD: 0,
+  MOVE: 1,
+  JUMP: 2,
+  SPAWN: 3,
+  FIGHT: 4,
+  CELL_DAMAGE: 7,
+  RECYCLER_FALL: 8,
+  CELL_OWNER_SWAP: 9,
+  UNIT_FALL: 10,
+  MATTER_COLLECT: 11
+}

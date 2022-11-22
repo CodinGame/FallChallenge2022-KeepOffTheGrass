@@ -1,0 +1,10 @@
+read width:int height:int
+
+gameloop
+  read myMatter:int oppMatter:int
+  loop height loop width read scrapAmount:int owner:int units:int recycler:int canBuild:int canSpawn:int inRangeOfRecycler:int
+  write WAIT
+  
+INPUT
+owner: 1 = me, 0 = foe, -1 = neutral
+recyclerOwner: 1 = mine, 0 = foe's, -1 = absent
