@@ -1,7 +1,7 @@
-<!-- LEAGUES level1 level2 level3 -->
+<!-- LEAGUES level1 level2 -->
 <div id="statement_back" class="statement_back" style="display: none"></div>
 <div class="statement-body">
-	<!-- BEGIN level1 level2 -->
+	<!-- BEGIN level1 -->
 	<!-- LEAGUE ALERT -->
 	<div style="color: #7cc576; 
 	background-color: rgba(124, 197, 118,.1);
@@ -366,7 +366,7 @@
 						<div class="title">Input for One Game Turn</div>
 						<span class="statement-lineno">First line:</span> two integers <var>myMatter</var> and
 						<var>oppMatter</var> for the amount of matter owned by each player.<br>
-						<span class="statement-lineno">Next <var>height</var> lines:</span> one line per cell, starting
+						<span class="statement-lineno">Next <var>height</var> * <var>width</var> lines:</span> one line per cell, starting
 						at <const>(0,0)</const> and incrementing from left to right, top to bottom. Each cell is
 						represented by <const>7</const> integers:<br>
 						<br>The first <const>4</const> variables describe properties for this tile:
@@ -428,7 +428,7 @@
 						<div class="blk">
 							<div class="title">Output</div>
 							<div class="text">
-								All your actions one one line, separated by a <action>;</action>
+								All your actions on one line, separated by a <action>;</action>
 								<ul>
 									<li>
 										<action>MOVE</action> <var>amount</var> <var>fromX</var> <var>fromY</var>
@@ -462,7 +462,7 @@
 						<const>12</const> ≤ <var>width</var> ≤ <const>15</const><br>
 						<const>6</const> ≤ <var>height</var> ≤ <const>7</const><br>
 					<!-- END -->
-					<!-- BEGIN level2 level3 -->
+					<!-- BEGIN level2 -->
 					  <const>12</const> ≤ <var>width</var> ≤ <const>24</const><br>
 					  <const>6</const> ≤ <var>height</var> ≤ <const>12</const><br>
 					<!-- END -->
@@ -522,6 +522,9 @@ Starter AIs are available in the
       <a target="_blank" href="https://github.com/CodinGame/FallChallenge2022-KeepOffTheGrass/tree/main/starterAIs">Starter Kit</a>.
       They can help you get started with your own bot. You can modify them to suit your own coding style or start completely
           from scratch.
+<br><br><br>
+<h2><span style="color: #b3b9ad"><b>Source code</b></span></h2>
+The game's source will be available <a target="_blank" href="https://github.com/CodinGame/FallChallenge2022-KeepOffTheGrass">here</a>.
 
 									</div>
 								</div>

@@ -1,9 +1,9 @@
-<!-- LEAGUES level1 level2 level3 -->
+<!-- LEAGUES level1 level2 -->
 <div id="statement_back" class="statement_back" style="display: none"></div>
 <div class="statement-body">
-	<!-- BEGIN level1 level2 -->
+	<!-- BEGIN level1 -->
 	<!-- LEAGUE ALERT -->
-	<div style="color: #7cc576; 
+	<div style="color: #7cc576;
 	background-color: rgba(124, 197, 118,.1);
 	padding: 20px;
 	margin-right: 15px;
@@ -51,7 +51,7 @@
 
 						<p>Les bâtiments vont <b>recycler</b> toutes les cases autour d'eux en ressources brutes, pour faire simple ils convertissent les parcelles de débris en parcelles d'<b style="color: #6fb16a;">herbe</b>, qui se trouvent en dessous.</p>
 
-						<p>Les joueurs contrôlent une <b>équipe</b> de ces robots au cours d'une <b>compétition amicale</b>, pour déterminer quelle équipe peut contrôler le plus de parcelles dans un champ de débris donné. Les équipes <b>marquent</b> des cases avec la couleur de leur équipe, avec les contraintes suivantes: 
+						<p>Les joueurs contrôlent une <b>équipe</b> de ces robots au cours d'une <b>compétition amicale</b>, pour déterminer quelle équipe peut contrôler le plus de parcelles dans un champ de débris donné. Les équipes <b>marquent</b> des cases avec la couleur de leur équipe, avec les contraintes suivantes:
 						<ul>
 							<li>Si des robots des deux équipes se retrouvent sur la même case, ils doivent se désassembler eux-même <const>un pour un</const>. Les robots sont donc enlevés du jeu, laissant ainsi au plus une équipe sur la case.</li>
 
@@ -82,7 +82,7 @@
 
 					<p>La partie est jouée sur une grille de taille variable.
 						Chaque case sur la grille représente une parcelle de débris électroniques. Le but du jeu est de contrôler plus de cases que son adversaire, en les faisant <b>marquer</b> par des robots.
-						Chaque case a les propriétés suivantes: 
+						Chaque case a les propriétés suivantes:
 					<ul>
 						<li><var>scrapAmount</var> : la quantité de matériau utilisable sur la case. Elle est égale au nombre de tours nécessaires pour être complêtement recyclée. Si égale a 0, cette case est de l'<b style="color: #6fb16a;">herbe</b>.</li>
 						<li><var>owner</var> : quel joueur contrôle cette case. Vaut <const>-1</const> si la case est neutre ou est de l'<b style="color: #6fb16a;">herbe</b>
@@ -169,7 +169,7 @@
 						</div>
 						<ul>
 							<li>
-								<action>BUILD</action> : construit un recycleur sur une case vide spécifiée que le joueur contrôle. 
+								<action>BUILD</action> : construit un recycleur sur une case vide spécifiée que le joueur contrôle.
 							</li>
 							</ul>
 							<div style="text-align: center; margin: 20px">
@@ -212,7 +212,7 @@
 							</li>
 							<li>Les tuiles avec un <var>scrapAmount</var> à <const>0</const> sont maintenant de l'<b style="color: #6fb16a;">herbe</b>. Les recycleurs ou les robots sur cette case sont retirés.
 							</li>
-							<li>Les joueurs reçoivent de base <const>10</const> matériaux ainsi que ceux acquis lors du recyclage. 
+							<li>Les joueurs reçoivent de base <const>10</const> matériaux ainsi que ceux acquis lors du recyclage.
 							</li>
 						</ol>
 						<br>
@@ -310,7 +310,7 @@
 						<div class="title">Entrées pour Un Tour de Jeu</div>
 						<span class="statement-lineno">Première ligne:</span> deux entiers <var>myMatter</var> et
 						<var>oppMatter</var> pour la quantité de matériaux de chaque joueur.<br>
-						<span class="statement-lineno">Les <var>height</var> lignes suivantes:</span> une ligne par case, commençant par celle en <const>(0,0)</const> et allant de gauche à droite, de haut en bas. Chaque case est représentée par <const>7</const> entiers:<br>
+						<span class="statement-lineno">Les <var>height</var> * <var>width</var> lignes suivantes:</span> une ligne par case, commençant par celle en <const>(0,0)</const> et allant de gauche à droite, de haut en bas. Chaque case est représentée par <const>7</const> entiers:<br>
 						<br>Les <const>4</const> premières variables décrivent les propriétés pour cette case&nbsp;:
 						<ul>
 							<li><var>scrapAmount</var>: le nombre de fois que cette case peut être recyclée avant de devenir de l'<b style="color: #6fb16a;">herbe</b>.</li>
@@ -392,7 +392,7 @@
 						<const>12</const> ≤ <var>width</var> ≤ <const>15</const><br>
 						<const>6</const> ≤ <var>height</var> ≤ <const>7</const><br>
 					<!-- END -->
-					<!-- BEGIN level2 level3 -->
+					<!-- BEGIN level2 -->
 					  <const>12</const> ≤ <var>width</var> ≤ <const>24</const><br>
 					  <const>6</const> ≤ <var>height</var> ≤ <const>12</const><br>
 					<!-- END -->
@@ -403,7 +403,7 @@
 					</div>
 					<!-- BEGIN level1 -->
 					<!-- LEAGUE ALERT -->
-					<div style="color: #7cc576; 
+					<div style="color: #7cc576;
                       background-color: rgba(124, 197, 118,.1);
                       padding: 20px;
                       margin-top: 10px;
@@ -440,7 +440,10 @@
 						<h2><span style="color: #b3b9ad"><b>Kit de Démarrage</b></span></h2>
 								Des IAs de base sont disponibles dans le <a target="_blank"
         href="https://github.com/CodinGame/FallChallenge2022-KeepOffTheGrass/tree/main/starterAIs">kit de démarrage</a>. Elles peuvent
-      vous aider à appréhender votre propre IA.			
+      vous aider à appréhender votre propre IA.
+<br><br><br>
+<h2><span style="color: #b3b9ad"><b>Code Dource</b></span></h2>
+Le code source de ce jeu est disponible <a target="_blank" href="https://github.com/CodinGame/FallChallenge2022-KeepOffTheGrass">ici</a>.
 									</div>
 								</div>
 							</div>
