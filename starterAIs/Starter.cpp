@@ -111,7 +111,7 @@ int main()
                 int amount = 0; // TODO: pick amount of units to move
                 Tile target; // TODO: pick a destination
                 ostringstream action;
-                    action << "MOVE " << amount << " " << tile << target;
+                    action << "MOVE " << amount << " " << tile << " " << target;
                     actions.emplace_back(
                         action.str()
                     );
