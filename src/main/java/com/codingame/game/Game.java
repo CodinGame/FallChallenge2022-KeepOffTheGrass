@@ -684,7 +684,7 @@ public class Game {
                         throw new GameException(
                             String.format("tried to spawn %d units at (%d, %d), into a recycler", spawn.getAmount(), target.x, target.y)
                         );
-                    } else if (player.money < spawnCost) {
+                    } else if (player.money / Config.COST_UNIT < spawn.getAmount()) {
                         throw new GameException(
                             String.format("tried to spawn %d units at (%d, %d), but has not enough matter", spawn.getAmount(), target.x, target.y)
                         );
