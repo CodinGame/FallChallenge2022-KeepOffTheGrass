@@ -780,7 +780,7 @@ public class Game {
             return "SPAWN <n> <x> <y>";
         }
         if (attempt.startsWith("BUILD")) {
-            return "BUILD <n> <x> <y>";
+            return "BUILD <x> <y>";
         }
         if (attempt.startsWith("MESSAGE")) {
             return "MESSAGE <text>";
