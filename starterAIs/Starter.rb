@@ -73,7 +73,7 @@ loop {
 
   my_units.each { |tile|
     target = nil # TODO: pick a destination tile
-    if taget
+    if target
       amount = 0 # TODO: pick amount of units to move
       actions<<"MOVE #{amount} #{tile.x} #{tile.y} #{target.x} #{target.y}"
     end
