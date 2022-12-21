@@ -106,7 +106,7 @@ class Player {
             if (actions.isEmpty()) {
                 System.out.println("WAIT");
             } else {
-                actions.stream().collect(Collectors.joining(";"));
+                System.out.println(actions.stream().collect(Collectors.joining(";")));
             }
         }
     }
