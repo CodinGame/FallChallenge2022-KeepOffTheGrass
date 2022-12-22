@@ -50,8 +50,8 @@ func main() {
 				fmt.Scan(&scrapAmount, &owner, &units, &recycler, &canBuild, &canSpawn, &inRangeOfRecycler)
 
 				tile := Tile{
-					i,
 					j,
+					i,
 					scrapAmount,
 					owner,
 					units,
