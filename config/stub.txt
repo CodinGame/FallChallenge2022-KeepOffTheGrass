@@ -2,7 +2,7 @@ read width:int height:int
 
 gameloop
   read myMatter:int oppMatter:int
-  loop height loop width read scrapAmount:int owner:int units:int recycler:int canBuild:int canSpawn:int inRangeOfRecycler:int
+  loop height loop width read scrapAmount:int owner:int units:int recycler:bool canBuild:bool canSpawn:bool inRangeOfRecycler:bool
   write WAIT
   
 INPUT
