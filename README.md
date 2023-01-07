@@ -103,10 +103,12 @@ mvn clean package
 To build your bot and run the game with two bots and a specified seed, use a similar Powershell script:
 
 ```Powershell
-$RefereeWorkingDir = "C:\git\github\CodinGame\FallChallenge2022-KeepOffTheGrass\"
-$RefereeJar = "C:\git\github\CodinGame\FallChallenge2022-KeepOffTheGrass\target\fall-challenge-2022-keep-off-the-grass-1.0-SNAPSHOT.jar"
-$Bot1 = "C:\git\github\StevenTCramer\Training\CodingGame\KeepOffTheGrass\bots\SnowFrogDev.exe"
-$Bot2 = "C:\git\github\StevenTCramer\Training\CodingGame\KeepOffTheGrass\Source\bin\Release\net6.0\KeepOffTheGrass.exe"
+$RefereeWorkingDir = "C:\git\github\TheFreezeTeam\FallChallenge2022-KeepOffTheGrass\"
+$RefereeJar = "C:\git\github\TheFreezeTeam\FallChallenge2022-KeepOffTheGrass\target\fall-challenge-2022-keep-off-the-grass-1.0-SNAPSHOT.jar"
+$Bot1 = "C:\git\github\StevenTCramer\Training\CodingGame\KeepOffTheGrass\Source\bin\Release\net6.0\KeepOffTheGrass.exe"
+$Bot1Nickname = "StevenTCramer"
+$Bot2 = "C:\git\github\StevenTCramer\Training\CodingGame\KeepOffTheGrass\bots\SnowFrogDev.exe"
+$Bot2Nickname = "SnowFrogDev"
 $Seed = "-1338641737090246700"
 
 Stop-Process $CodingameProcess -ErrorAction SilentlyContinue
@@ -114,8 +116,7 @@ Stop-Process $CodingameProcess -ErrorAction SilentlyContinue
 dotnet build Source\KeepOffTheGrass.csproj -c release;
 
 Push-Location $RefereeWorkingDir
-$global:CodingameProcess = Start-Process -FilePath 'C:\Program Files\Amazon Corretto\jdk1.8.0_352\bin\java.exe' -ArgumentList '-jar', "$RefereeJar", $Bot1, $Bot2, $Seed -PassThru
+$global:CodingameProcess = Start-Process -FilePath 'C:\Program Files\Amazon Corretto\jdk1.8.0_352\bin\java.exe' -ArgumentList '-jar', $RefereeJar, $Bot1, $Bot1Nickname, $Bot2, $Bot2Nickname, $Seed -PassThru
 
 Pop-Location
-
 ```
