@@ -9,23 +9,18 @@ public class KeepOffTheGrassMain {
     public static void main(String[] args) throws IOException, InterruptedException {
 
         Options opts = new Options().read(args);
-        String cli1 = opts.getCommandLine1();
-        String cli2 = opts.getCommandLine2();
-        Long cli3 = opts.getCommandLine3();
 
-        System.out.format("bot1 %s%n", cli1);
-        System.out.format("bot2 %s%n", cli2);
-        System.out.format("seed %d%n", cli3);
+        System.out.format("bot1Command %s%n", opts.getBot1Command());
+        System.out.format("bot1Nickname %s%n", opts.getBot1Nickname());
+        System.out.format("bot2Command %s%n", opts.getBot2Command());
+        System.out.format("bot2Nickname %s%n", opts.getBot2Nickname());
+        System.out.format("seed %d%n", opts.getSeed());
 
         MultiplayerGameRunner gameRunner = new MultiplayerGameRunner();
 
-        // Set seed
-        Long seed = cli3 != null ? cli3 : null;
-        gameRunner.setSeed(seed);
-        System.out.format("Seed %d%n", seed);
-
-        gameRunner.addAgent("C:/git/StevenTCramer/Training/CodingGame/KeepOffTheGrass/Source/bin/Debug/net6.0/KeepOffTheGrass.exe", "StevenTCramer");
-        gameRunner.addAgent("C:/git/StevenTCramer/Training/CodingGame/KeepOffTheGrass/bots/SnowFrogDev.exe", "SnowfrogDev");
+        gameRunner.setSeed(opts.getSeed());
+        gameRunner.addAgent(opts.getBot1Command(), "StevenTCramer");
+        gameRunner.addAgent(opts.getBot2Command(), "SnowfrogDev");
 
         gameRunner.start();
     }
@@ -36,7 +31,7 @@ public class KeepOffTheGrassMain {
 
         System.out.println("Compiling Boss.java... " + botFile);
         Process compileProcess = Runtime.getRuntime()
-            .exec(new String[] { "bash", "-c", "javac " + botFile + " -d " + outFolder.getAbsolutePath() });
+                .exec(new String[] { "bash", "-c", "javac " + botFile + " -d " + outFolder.getAbsolutePath() });
         compileProcess.waitFor();
         return "java -cp " + outFolder + " Player";
     }
@@ -46,8 +41,8 @@ public class KeepOffTheGrassMain {
         System.out.println("Compiling ... " + botFile);
 
         Process compileProcess = Runtime.getRuntime().exec(
-            new String[] { "bash", "-c", "tsc --target ES2018 --inlineSourceMap --types ./typescript/readline/ "
-                + botFile + " --outFile /tmp/Boss.js" }
+                new String[] { "bash", "-c", "tsc --target ES2018 --inlineSourceMap --types ./typescript/readline/ "
+                        + botFile + " --outFile /tmp/Boss.js" }
         );
         compileProcess.waitFor();
 
@@ -56,46 +51,50 @@ public class KeepOffTheGrassMain {
 }
 
 class Options {
-    private String commandLine1 = null;
-    private String commandLine2 = null;
-    private String commandLine3 = null;
+    private String bot1Command = null;
+    private String bot1Nickname = null;
+    private String bot2Command = null;
+    private String bot2Nickname = null;
+    private String seed = null;
 
     public Options read(String[] args) {
-        if (args == null) {
+        if (args == null || args.length == 0) {
             return this;
         }
 
-        switch (args.length) {
-            case 1: {
-                this.commandLine1 = args[0];
-                break;
-            }
-            case 2: {
-                this.commandLine1 = args[0];
-                this.commandLine2 = args[1];
-                break;
-            }
-            case 3: {
-                this.commandLine1 = args[0];
-                this.commandLine2 = args[1];
-                this.commandLine3 = args[2];
-                break;
-            }
-        }
+        this.bot1Command = args[0];
+        this.bot1Nickname = args.length > 1 ? args[1] : null;
+        this.bot2Command = args.length > 2 ? args[2] : null;
+        this.bot2Nickname = args.length > 3 ? args[3] : null;
+        this.seed = args.length > 4 ? args[4] : null;
 
         return this;
     }
 
-    public String getCommandLine1() {
-        return this.commandLine1;
+    public String getBot1Nickname(){
+        return bot1Nickname == null ? "Player1" : bot1Nickname;
     }
 
-    public String getCommandLine2() {
-        return this.commandLine2;
+    public String getBot2Nickname(){
+        return bot1Nickname == null ? "Player1" : bot1Nickname;
     }
 
-    public Long getCommandLine3() {
-        if(this.commandLine3 == null) return null;
-        return Long.parseLong(this.commandLine3);
+    public String getBot1Command() {
+        return
+                bot1Command == null ?
+                        "C:/git/github/StevenTCramer/Training/CodingGame/KeepOffTheGrass/Source/bin/Release/net6.0/KeepOffTheGrass.exe" :
+                        bot1Command;
+    }
+
+    public String getBot2Command() {
+        return
+                bot2Command == null ?
+                        "C:/git/github/StevenTCramer/Training/CodingGame/KeepOffTheGrass/bots/SnowFrogDev.exe" :
+                        bot2Command;
+    }
+
+    public Long getSeed() {
+        if(this.seed == null) return null;
+        return Long.parseLong(this.seed);
     }
 }
