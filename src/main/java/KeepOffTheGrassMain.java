@@ -76,7 +76,7 @@ class Options {
     }
 
     public String getBot2Nickname(){
-        return bot1Nickname == null ? "Player1" : bot1Nickname;
+        return bot1Nickname == null ? "Player1" : bot2Nickname;
     }
 
     public String getBot1Command() {
