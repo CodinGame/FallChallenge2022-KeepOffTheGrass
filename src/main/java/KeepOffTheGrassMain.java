@@ -19,8 +19,8 @@ public class KeepOffTheGrassMain {
         MultiplayerGameRunner gameRunner = new MultiplayerGameRunner();
 
         gameRunner.setSeed(opts.getSeed());
-        gameRunner.addAgent(opts.getBot1Command(), "StevenTCramer");
-        gameRunner.addAgent(opts.getBot2Command(), "SnowfrogDev");
+        gameRunner.addAgent(opts.getBot1Command(), opts.getBot1Nickname());
+        gameRunner.addAgent(opts.getBot2Command(), opts.getBot2Nickname());
 
         gameRunner.start();
     }
